@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd c3alabs && npm install && npm run build",
+  "outputDirectory": "c3alabs/.next",
+  "installCommand": "cd c3alabs && npm install",
+  "framework": "nextjs"
+}
