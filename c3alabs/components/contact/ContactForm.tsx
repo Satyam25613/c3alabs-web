@@ -18,7 +18,7 @@ export default function ContactForm() {
   });
 
   useEffect(() => {
-    const type = searchParams.get('type');
+    const type = searchParams?.get('type');
     if (type === 'investor') {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData((prev) => ({ ...prev, type: 'investor' }));
