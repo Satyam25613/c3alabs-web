@@ -1,0 +1,99 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.input,
+.select,
+.textarea {
+  background: var(--bg-2);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--text-1);
+  outline: none;
+  transition:
+    border-color 400ms var(--ease-silk),
+    box-shadow 400ms var(--ease-silk);
+  width: 100%;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-3);
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--border-2);
+  box-shadow: 0 0 0 3px var(--glow-focus);
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: var(--text-0);
+  color: var(--bg-0);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  width: 100%;
+  margin-top: var(--space-4);
+  transition:
+    opacity 300ms var(--ease-silk),
+    transform 300ms var(--ease-silk);
+}
+
+.submit:hover {
+  opacity: 0.85;
+}
+
+.submit:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
+}
+
+/* Success state */
+.success {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-10) 0;
+}
+
+.successLabel {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-3);
+}
+
+.successMessage {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: var(--type-heading);
+  color: var(--text-0);
+}

@@ -1,0 +1,240 @@
+.container {
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+/* === HERO === */
+.heroSection {
+  padding-top: 160px;
+  padding-bottom: clamp(60px, 8vh, 120px);
+  background: var(--bg-0);
+  border-bottom: 1px solid var(--border-0);
+}
+
+.heroHeadline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: var(--type-display);
+  color: var(--text-0);
+  line-height: 1.06;
+  letter-spacing: var(--tracking-display);
+}
+
+.heroSub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--type-body-lg);
+  color: var(--text-2);
+  max-width: 580px;
+  margin-top: var(--space-6);
+  line-height: 1.65;
+}
+
+/* === FOUNDER SECTION === */
+.founderSection {
+  padding: clamp(100px, 12vh, 160px) 0;
+  background: var(--bg-1);
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.founderContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.founderName {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--type-title);
+  color: var(--text-0);
+  margin-top: var(--space-4);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.founderRole {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  display: block;
+  margin-bottom: var(--space-8);
+}
+
+.founderBio {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+}
+
+.founderQuote {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(20px, 2vw, 24px);
+  color: var(--text-0);
+  line-height: 1.4;
+  border-left: 1px solid var(--border-0);
+  padding-left: var(--space-6);
+  font-style: italic;
+}
+
+.founderVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.founderImageWrapper {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-0);
+  background: var(--bg-2);
+}
+
+.founderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1); /* Antigravity style monochrome */
+  transition: filter 0.4s ease;
+}
+
+.founderImage:hover {
+  filter: grayscale(0%) contrast(1.0); /* Reveals color on hover */
+}
+
+/* === EXPERTISE SECTION === */
+.expertiseSection {
+  padding: clamp(100px, 12vh, 160px) 0;
+  background: var(--bg-0);
+  border-top: 1px solid var(--border-0);
+}
+
+.expertiseHeadline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--type-title);
+  color: var(--text-0);
+  margin-top: var(--space-4);
+  line-height: 1.18;
+  margin-bottom: var(--space-16);
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--border-0);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.expertiseCard {
+  background: var(--bg-surface);
+  padding: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: 100%;
+}
+
+.expertiseHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.expertiseArea {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-0);
+}
+
+.expertiseFocus {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.expertiseDesc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+/* === CTA === */
+.ctaSection {
+  padding: clamp(100px, 12vh, 160px) 0;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border-0);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaLabel {
+  margin-bottom: var(--space-6);
+}
+
+.ctaHeadline {
+  font-family: var(--font-display);
+  font-size: var(--type-title);
+  font-weight: 300;
+  color: var(--text-0);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.ctaSub {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  color: var(--text-2);
+  margin-bottom: var(--space-8);
+}
+
+.ctaButtonRow {
+  display: flex;
+  justify-content: center;
+}
+
+/* === MOBILE === */
+@media (max-width: 900px) {
+  .founderGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    padding-top: 120px;
+  }
+  .expertiseGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,98 @@
+/* ============================================
+   BUTTONS — Antigravity-Inspired Pill System (Light Mode)
+   ============================================ */
+
+/* === PRIMARY BUTTON === */
+.btnPrimary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: var(--text-0); /* Dark */
+  color: var(--bg-1); /* Light */
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    background 300ms var(--ease-silk),
+    transform 300ms var(--ease-silk);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.btnPrimary:hover {
+  background: var(--text-1);
+}
+
+.btnPrimary:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
+}
+
+.btnText {
+  position: relative;
+  z-index: 1;
+}
+
+/* === SECONDARY BUTTON (Ghost Pill) === */
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--text-0);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    border-color 300ms var(--ease-silk),
+    color 300ms var(--ease-silk),
+    background 300ms var(--ease-silk);
+}
+
+.btnSecondary:hover {
+  border-color: var(--text-2);
+  color: var(--text-0);
+  background: var(--border-0);
+}
+
+.btnSecondary:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
+}
+
+/* === GHOST LINK === */
+.ghostLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 300ms var(--ease-silk),
+    gap 400ms var(--ease-silk);
+}
+
+.ghostLink:hover {
+  color: var(--text-0);
+  gap: 12px;
+}

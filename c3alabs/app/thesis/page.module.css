@@ -1,0 +1,144 @@
+.container {
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+/* === HERO === */
+.heroSection {
+  padding-top: 160px;
+  padding-bottom: clamp(60px, 8vh, 120px);
+  background: var(--bg-0);
+}
+
+.heroHeadline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: var(--type-display);
+  color: var(--text-0);
+  line-height: 1.06;
+  letter-spacing: var(--tracking-display);
+}
+
+.heroSub {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+  margin-top: var(--space-8);
+}
+
+/* === ARGUMENT === */
+.argumentSection {
+  padding: clamp(140px, 16vh, 240px) 0;
+  background: var(--bg-1);
+}
+
+.argumentContainer {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+.argBlock {
+  margin-bottom: var(--space-4);
+}
+
+.argHeader {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.argNumber {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+.argTitle {
+  font-family: var(--font-body);
+  font-size: var(--type-subheading);
+  font-weight: 400;
+  color: var(--text-0);
+}
+
+.argBody {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--type-body-lg);
+  color: var(--text-1);
+  max-width: 620px;
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.argDivider {
+  height: 1px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-0) 15%,
+    var(--border-1) 50%,
+    var(--border-0) 85%,
+    transparent 100%
+  );
+  margin: var(--space-12) 0;
+}
+
+/* === INVITATION === */
+.invitationSection {
+  padding: clamp(140px, 16vh, 240px) 0;
+  background: var(--bg-0);
+  border-top: 1px solid var(--border-0);
+}
+
+.invitationContainer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+.invitationStatement {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--type-title);
+  color: var(--text-0);
+  line-height: 1.25;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.invitationSub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--type-body);
+  color: var(--text-3);
+  margin-top: var(--space-8);
+  line-height: 1.65;
+}
+
+.invitationCTA {
+  margin-top: var(--space-12);
+}
+
+/* === MOBILE === */
+@media (max-width: 767px) {
+  .heroSection {
+    padding-top: 120px;
+  }
+
+  .argumentSection,
+  .invitationSection {
+    padding: var(--space-24) 0;
+  }
+}

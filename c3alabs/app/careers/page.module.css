@@ -1,0 +1,155 @@
+.container {
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+/* === HERO === */
+.heroSection {
+  padding-top: 160px;
+  padding-bottom: clamp(60px, 8vh, 120px);
+  background: var(--bg-0);
+  border-bottom: 1px solid var(--border-0);
+}
+
+.heroHeadline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: var(--type-display);
+  color: var(--text-0);
+  line-height: 1.06;
+  letter-spacing: var(--tracking-display);
+}
+
+.heroSub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--type-body-lg);
+  color: var(--text-2);
+  max-width: 580px;
+  margin-top: var(--space-6);
+  line-height: 1.65;
+}
+
+/* === CULTURE === */
+.cultureSection {
+  padding: clamp(100px, 12vh, 160px) 0;
+  background: var(--bg-1);
+}
+
+.cultureHeaderGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+}
+
+.cultureHeadline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--type-title);
+  color: var(--text-0);
+  line-height: 1.18;
+  margin-top: var(--space-4);
+}
+
+.cultureTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-4);
+}
+
+.cultureBodyText {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--type-body);
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.cultureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-0);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.cultureCard {
+  background: var(--bg-2);
+  padding: var(--space-10);
+  height: 100%;
+}
+
+.cultureTitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.cultureBody {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-3);
+  line-height: 1.7;
+}
+
+/* === ROLES === */
+.rolesSection {
+  padding: clamp(100px, 12vh, 160px) 0;
+  background: var(--bg-0);
+  border-top: 1px solid var(--border-0);
+}
+
+.rolesHeadline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--type-title);
+  color: var(--text-0);
+  margin-top: var(--space-4);
+  line-height: 1.18;
+  margin-bottom: var(--space-12);
+}
+
+.rolesList {
+  margin-top: var(--space-4);
+}
+
+.rolesCTA {
+  margin-top: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bottomCtaText {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  color: var(--text-2);
+  margin-bottom: var(--space-6);
+  max-width: 460px;
+}
+
+/* === MOBILE === */
+@media (max-width: 767px) {
+  .heroSection {
+    padding-top: 120px;
+  }
+
+  .cultureHeaderGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .cultureGrid {
+    grid-template-columns: 1fr;
+  }
+}

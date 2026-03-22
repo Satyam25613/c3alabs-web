@@ -1,0 +1,209 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  display: flex;
+  align-items: stretch;
+  background: var(--bg-0);
+  overflow: hidden;
+}
+
+/* 3D canvas container */
+.coreContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.canvasPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* Atmospheric glow — Light mode subtle ambient light */
+.atmosphericGlow {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.03) 0%, /* Faint Grey */
+    rgba(0, 0, 0, 0.01) 40%, /* Very faint grey */
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+/* Text content — CENTERED, z-index 10 */
+.heroContent {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  padding: 0 var(--grid-margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 0px;
+  gap: var(--space-8);
+}
+
+/* Headline cluster — CENTER-ALIGNED */
+.headlineCluster {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+}
+
+.foundedLabel {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+  margin-bottom: var(--space-8);
+  text-transform: uppercase;
+}
+
+.headlineLine {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--type-hero);
+  color: var(--text-0);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-hero);
+  display: block;
+}
+
+/* Make Emphasized text standard for light theme */
+.headlineLine em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-2);
+}
+
+/* Sub-content block */
+.subBlock {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-4);
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(20px, 2vw, 24px);
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* Portfolio Strip */
+.portfolioStrip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+  flex-wrap: wrap;
+}
+
+.portfolioCard {
+  background: rgba(10, 10, 10, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  display: none; /* Hidden on mobile */
+}
+
+.cardBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    padding-bottom: var(--space-16);
+  }
+
+  .heroContent {
+    padding-top: 120px;
+    justify-content: flex-start;
+  }
+
+  .headlineCluster {
+    max-width: 100%;
+  }
+
+  .subBlock {
+    max-width: 100%;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .portfolioStrip {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .portfolioCard {
+    justify-content: space-between;
+  }
+
+  .cardDesc {
+    display: none;
+  }
+}

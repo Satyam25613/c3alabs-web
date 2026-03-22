@@ -1,0 +1,81 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-0);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms var(--ease-out);
+}
+
+.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 var(--grid-margin);
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--text-0);
+}
+
+.logoDot {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--text-2);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color var(--duration-fast);
+}
+
+.close:hover {
+  color: var(--text-0);
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: var(--space-10);
+}
+
+.menuLink {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--type-heading);
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+.menuLink:hover,
+.menuLink[data-active] {
+  color: var(--text-0);
+}

@@ -1,0 +1,108 @@
+/* ============================================
+   C3A Light Theme Components
+   ============================================ */
+
+.card {
+  position: relative;
+  background: #050505; /* Black */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Dark subtle border */
+  border-radius: var(--radius-card); /* 24px */
+  padding: var(--space-10);
+  transition:
+    border-color 400ms var(--ease-silk),
+    background 400ms var(--ease-silk),
+    box-shadow 400ms var(--ease-silk),
+    transform 400ms var(--ease-silk);
+  overflow: hidden;
+}
+
+/* Add the glow to the top edge like infraIsland */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  box-shadow: 0 0 20px 2px rgba(255,255,255,0.1);
+  opacity: 0.6;
+  transition: opacity 400ms ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 48px -12px rgba(0,0,0,0.5); /* Heavy dark shadow */
+  transform: translateY(-2px);
+}
+
+.card:hover::before {
+  opacity: 1; /* Glow intensifies on hover */
+}
+
+.header, .divider, .category, .description, .footer {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.domain {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  color: #9AA0A6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 300ms var(--ease-silk);
+}
+
+.domain:hover {
+  color: #FFFFFF;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+
+  margin: var(--space-6) 0;
+}
+
+.category {
+  font-family: var(--font-body);
+  font-size: var(--type-subheading);
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-top: var(--space-8);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: 300;
+  color: #CCCCCC;
+  margin-top: var(--space-4);
+  line-height: 1.6;
+}
+
+.footer {
+  margin-top: var(--space-10);
+}
+
+/* Force GhostLink in ProductCard to be white initially */
+.card :global([class*="ghostLink"]),
+.card :global([class*="GhostLink"]) {
+  color: #FFFFFF !important;
+}

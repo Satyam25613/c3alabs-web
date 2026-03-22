@@ -1,0 +1,175 @@
+/* ============================================
+   Antigravity-Inspired Footer
+   ============================================ */
+
+.footer {
+  border-top: 1px solid var(--border-0);
+  background: var(--bg-1);
+  padding: var(--space-20) 0 0 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Top Section --- */
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-40);
+}
+
+.sloganBlock {
+  max-width: 50%;
+}
+
+.slogan {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--type-display);
+  color: var(--text-0);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-display);
+}
+
+/* --- Links Grid --- */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-16);
+  min-width: 45%;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.groupLabel {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--type-body-sm);
+  color: var(--text-0);
+  margin-bottom: var(--space-2);
+}
+
+.link {
+  font-family: var(--font-body);
+  font-size: var(--type-body-sm);
+  font-weight: 400;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color 300ms var(--ease-silk);
+}
+
+.link:hover {
+  color: var(--text-0);
+}
+
+/* --- Massive Wordmark --- */
+.wordmarkContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -1%; /* Pull down closer to bottom bar */
+}
+
+.wordmarkSvg {
+  width: 100%;
+  height: auto;
+}
+
+.wordmarkText {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 240px;
+  fill: var(--text-0);
+  letter-spacing: -0.04em;
+}
+
+/* --- Bottom Utility Bar --- */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-8) 0;
+  border-top: 1px solid transparent; /* Keeps spacing aligned */
+}
+
+.logoImg {
+  height: 24px;
+  width: auto;
+  filter: invert(1) brightness(0.1);
+  opacity: 0.8;
+  transition: opacity 300ms var(--ease-silk);
+}
+
+.logoImg:hover {
+  opacity: 1;
+}
+
+.utilityLinks {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.copyright, .utilityLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color 300ms var(--ease-silk);
+}
+
+.utilityLink:hover {
+  color: var(--text-0);
+}
+
+/* --- Mobile --- */
+@media (max-width: 1024px) {
+  .linksGrid {
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 767px) {
+  .topSection {
+    flex-direction: column;
+    gap: var(--space-16);
+    margin-bottom: var(--space-20);
+  }
+
+  .sloganBlock {
+    max-width: 100%;
+  }
+
+  .linksGrid {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-10);
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+    padding: var(--space-6) 0;
+  }
+
+  .utilityLinks {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+}

@@ -1,0 +1,16 @@
+c3alabs/node_modules/
+c3alabs/.next/
+c3alabs/out/
+c3alabs/build/
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+c3alabs/tmp/
+c3alabs/.turbo/
+node_modules*/

@@ -1,0 +1,254 @@
+/* ============================================
+   C3ALABS GLOBAL DESIGN SYSTEM
+   v4.0 — Antigravity Literal Copy
+   User requested: "forget the colour patter copy the colour patter text and everything from antigravity it's super cool"
+   ============================================ */
+
+:root {
+  /* --- Fonts --- */
+  /* Antigravity uses Google Sans Flex, but we'll use Geist Sans to emulate it */
+  --font-display: var(--font-geist-sans), 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: var(--font-geist-sans), 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  /* --- Type Scale --- */
+  --type-hero: clamp(40px, 6vw, 110px);
+  --type-display: clamp(36px, 5vw, 72px);
+  --type-title: clamp(32px, 4vw, 48px);
+  --type-heading: clamp(22px, 2.5vw, 32px);
+  --type-subheading: 18px;
+  --type-body-lg: clamp(16px, 1.5vw, 18px);
+  --type-body: 16px;
+  --type-body-sm: 14px;
+  --type-label: 12px;
+  --type-mono: 13px;
+  
+  /* --- Tracking (Antigravity tight tracking) --- */
+  --tracking-hero: -0.02em;
+  --tracking-display: -0.015em;
+  --tracking-body: 0em;
+
+  /* --- Spacing (8px base) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+
+  /* --- Grid --- */
+  --grid-max: 1800px;
+  --grid-gutter: 32px;
+  --grid-margin: clamp(24px, 5vw, 80px);
+
+  /* --- Motion — "Silk" easing --- */
+  --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-linear: linear;
+  --duration-fast: 200ms;
+  --duration-mid: 400ms;
+  --duration-slow: 700ms;
+  --duration-hero: 1200ms;
+
+  /* --- Border Radii (Antigravity "Island" system) --- */
+  --radius-pill: 100px;
+  --radius-stage: 40px; /* Large rounded stages */
+  --radius-card: 24px;
+  --radius-sm: 12px;
+}
+
+/* ============================================
+   ANTIGRAVITY LIGHT MODE AS DEFAULT
+   ============================================ */
+:root {
+  /* Soft warm grey canvas */
+  --bg-0: #FAFAFA;
+  /* Pure white for raised cards */
+  --bg-1: #FFFFFF;
+  /* Slightly darker for panels */
+  --bg-2: #F0F2F5;
+  /* Dark mode backgrounds for inverted islands */
+  --bg-island: #000000;
+  
+  /* Text */
+  --text-0: #111111; /* Almost black */
+  --text-1: #333333;
+  --text-2: #4D5156; /* Darker grey */
+  --text-3: #656C73; /* Darker muted text */
+  --text-4: #9AA0A6;
+  
+  /* Inverted text for dark islands */
+  --text-inv-0: #FFFFFF;
+  --text-inv-1: #E8EAED;
+  --text-inv-2: #9AA0A6;
+  
+  /* Ghost borders */
+  --border-0: rgba(0, 0, 0, 0.06);
+  --border-1: rgba(0, 0, 0, 0.12);
+  --border-2: rgba(0, 0, 0, 0.20);
+  
+  /* Inverted borders */
+  --border-inv-0: rgba(255, 255, 255, 0.08);
+  
+  /* Nav */
+  --nav-bg: rgba(255, 255, 255, 0.75);
+  --nav-active: rgba(0, 0, 0, 0.05);
+  
+  /* Glow */
+  --glow-color: rgba(0, 0, 0, 0.02);
+  --glow-hover: rgba(0, 0, 0, 0.05);
+  
+  /* Brand accents from Antigravity */
+  --accent-blue: #4285F4;
+  --accent-purple: #A142F4;
+  --accent-orange: #FA7B17;
+  --accent-pink: #F442A2;
+}
+
+/* ============================================
+   DARK MODE (Toggled via button)
+   ============================================ */
+[data-theme="dark"] {
+  /* Deep space black canvas */
+  --bg-0: #000000;
+  /* Slightly elevated black */
+  --bg-1: #060606;
+  /* Panels */
+  --bg-2: #111111;
+  /* Inverted backgrounds */
+  --bg-island: #FFFFFF;
+  
+  /* Text */
+  --text-0: #FFFFFF;
+  --text-1: #E8EAED;
+  --text-2: #A0AAB5;
+  --text-3: #80868B;
+  --text-4: #5F6368;
+  
+  /* Ghost borders */
+  --border-0: rgba(255, 255, 255, 0.08); /* Faint white border */
+  --border-1: rgba(255, 255, 255, 0.15);
+  --border-2: rgba(255, 255, 255, 0.25);
+  
+  /* Nav */
+  --nav-bg: rgba(6, 6, 6, 0.75);
+  --nav-active: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.02;
+  mix-blend-mode: screen; /* Overlay logic for black bg */
+}
+
+/* ============================================
+   REDUCED MOTION
+
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   BASE RESETS
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-0);
+  color: var(--text-1);
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-0);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   GLOBAL GRAIN TEXTURE
+   ============================================ */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035; /* Slightly stronger for light mode */
+  mix-blend-mode: multiply; /* Better for light backgrounds */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================
+   GLOBAL UTILITIES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--grid-max);
+  margin: 0 auto;
+  padding-left: var(--grid-margin);
+  padding-right: var(--grid-margin);
+}
+
+/* Section break — gradient fade line */
+.section-break {
+  height: 1px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-0) 15%,
+    var(--border-1) 50%,
+    var(--border-0) 85%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* Selection */
+::selection {
+  background: var(--text-0);
+  color: var(--bg-0);
+}
