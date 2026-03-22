@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  distDir: '/tmp/c3a-next-build',
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'karax.ai' },
+    ],
+  },
 };
 
 export default nextConfig;
