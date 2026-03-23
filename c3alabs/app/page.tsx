@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Hero from '@/components/hero/Hero';
 import SectionLabel from '@/components/sections/SectionLabel';
 import SectionDivider from '@/components/sections/SectionDivider';
@@ -9,7 +8,6 @@ import RevealWrapper, { RevealHeadline, RevealBody, RevealCTABlock } from '@/com
 import ProductCard from '@/components/cards/ProductCard';
 import ButtonPrimary from '@/components/buttons/ButtonPrimary';
 import ButtonSecondary from '@/components/buttons/ButtonSecondary';
-import GhostLink from '@/components/buttons/GhostLink';
 import { containerVariant } from '@/lib/motion';
 import { pageTransition } from '@/lib/motion';
 import { PRODUCTS } from '@/lib/constants';
@@ -195,45 +193,6 @@ export default function HomePage() {
         </RevealWrapper>
       </section>
 
-      {/* === FOUNDER PRESENCE === */}
-      <section className={styles.founderSection}>
-        <RevealWrapper className={styles.container}>
-          <div className={styles.founderGrid}>
-            <div className={styles.founderContent}>
-              <RevealBody>
-                <SectionLabel>Founder</SectionLabel>
-              </RevealBody>
-              <RevealHeadline>
-                <h2 className={styles.founderName}>Sai Casula</h2>
-              </RevealHeadline>
-              <RevealBody>
-                <span className={styles.founderRole}>Founder &amp; CEO, C3alabs</span>
-              </RevealBody>
-              <RevealBody>
-                <blockquote className={styles.founderQuote}>
-                  &ldquo;A new era of intelligence requires a new foundation. We are not building tools to assist with work. We are building the infrastructure that executes&nbsp;it.&rdquo;
-                </blockquote>
-              </RevealBody>
-              <RevealCTABlock>
-                <GhostLink href="/about">Read about C3alabs →</GhostLink>
-              </RevealCTABlock>
-            </div>
-
-            <div className={styles.founderVisual}>
-              <div className={styles.founderImageWrapper}>
-                <Image 
-                  src="/sai-casula.png" 
-                  alt="Sai Casula - Founder & CEO" 
-                  width={400} 
-                  height={400} 
-                  className={styles.founderImage}
-                  priority 
-                />
-              </div>
-            </div>
-          </div>
-        </RevealWrapper>
-      </section>
 
       {/* === JOIN THE TEAM TEASER === */}
       <section className={styles.joinSection}>
